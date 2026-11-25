@@ -17,6 +17,9 @@ plugins {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        // Local cache first: lets offline/air-gapped machines resolve Kotlin
+        // compiler artifacts that are already present in ~/.m2.
+        mavenLocal()
         google()
         mavenCentral()
     }
